@@ -1,0 +1,170 @@
+.Encabezado {
+    margin: 0;
+    background-color: #e2e8ee;
+    padding: 15px;
+
+    * {
+        margin-right: 10px;
+    }
+
+    button {
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        //border: 1px solid #000000;
+    }
+
+    .Add {
+        background-color: #22007C;
+
+        &:hover {
+            background-color: #140152;
+        }
+    }
+
+    .Export {
+        background-color: #007bff;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    .Import {
+        background-color: #28a745;
+
+        &:hover {
+            background-color: #218838;
+        }
+    }
+
+    i {
+        font-size: 13px;
+        margin-left: 4px;
+    }
+}
+
+.vista {
+    background-color: rgb(255, 255, 255);
+
+    * {
+        padding: 10px;
+    }
+
+}
+
+.opciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .grupos {
+        display: flex;
+
+        * {
+            display: flex;
+            align-items: center;
+        }
+
+        div * {
+            margin-right: 10px;
+        }
+
+        .custom-select {
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            font-size: 16px;
+            color: #0D00A4;
+            outline: none;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+
+    .buscador {
+        * {
+            margin: 10px;
+        }
+    }
+}
+
+.espacio-tabla {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .acciones-col {
+        width: 150px; // Ajusta este valor según sea necesario
+        text-align: center;
+
+        button {
+            font-size: 15px;
+            padding: 6px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .edit {
+            background-color: #ffd500;
+            margin: 2px;
+
+            &:hover {
+                background-color: #fdc500;
+            }
+        }
+
+        .borrar {
+            background-color: #d1105a;
+            margin: 2px;
+
+            &:hover {
+                background-color: #ac0d4a;
+            }
+        }
+    }
+
+    tbody tr td.acciones-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            margin: 0 5px;
+        }
+    }
+}
+
+
+
+@media (max-width: 768px) {
+
+    .opciones,
+    .grupos {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

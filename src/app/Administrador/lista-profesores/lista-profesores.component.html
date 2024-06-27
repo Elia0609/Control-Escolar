@@ -1,0 +1,52 @@
+<div class="flex h-screen">
+    <div class="flex-1 p-4">
+        <div class="flex justify-between items-center Encabezado">
+            <h2 class="text-xl font-bold">Lista de Profesores</h2>
+            <div>
+                <button class="px-4 py-2 Add" (click)="abrirModal()">
+                    Agregar<i class="fa-solid fa-plus"></i>
+                </button>
+                <button class="px-4 py-2 Export" (click)="exportToExcel()">
+                    Exportar a Excel<i class="fa-solid fa-download"></i>
+                </button>
+            </div>
+        </div>
+        <div class="vista">
+            <div class="opciones">
+                <div class="buscador" [formGroup]="searchForm">
+                    <label for="search" class="mr-2">Buscar Profesor:</label>
+                    <input formControlName="search" type="text" class="border rounded p-1" />
+                </div>
+            </div>
+            <div class="overflow-x-auto espacio-tabla">
+                <table class="min-w-full tabla">
+                  <thead class="head-table">
+                    <tr>
+                      <th class="py-2 px-4 ">Cédula</th>
+                      <th class="py-2 px-4 ">Nombre</th>
+                      <th class="py-2 px-4 ">Apellidos</th>
+                      <th class="py-2 px-4 ">Correo</th>
+                      <th class="py-2 px-4 ">Telefono</th>
+                      <th class="py-2 px-4 ">Especialidad</th>
+                      <th class="py-2 px-4 ">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of filteredItems">
+                        <td>{{ item.cedula }}</td>
+                        <td class="py-2 px-4 ">{{ item.nombre }}</td>
+                        <td class="py-2 px-4 ">{{ item.ap + " " + item.am }}</td>
+                        <td class="py-2 px-4 ">{{ item.correo }}</td>
+                        <td class="py-2 px-4 ">{{ item.tel }}</td>
+                        <td class="py-2 px-4 ">{{ item.especialidad}}</td>
+                        <td class="py-2 px-4 ">
+                          <button class="edit" (click)="editItem(item)"><i class="fa-solid fa-user-pen"></i></button> 
+                          <button class="borrar" (click)="deleteItem(item?.id)"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+    </div>
+</div>

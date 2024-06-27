@@ -1,0 +1,42 @@
+<div class="flex h-screen">
+  <div class="flex-1 p-4">
+    <div class="flex justify-between items-center Encabezado">
+      <h2 class="text-xl font-bold">Impresion de Credenciales</h2>
+    </div>
+    <div class="principal">
+      <div class="overflow-x-auto espacio-tabla">
+        <table class="min-w-full tabla">
+          <thead class="head-table">
+            <tr>
+              <th>Semestre y Grupo</th>
+              <th class="acciones-col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let semestre of ['1', '2', '3']">
+            <tr *ngFor="let grupo of ['A', 'B', 'C']">
+              <td>
+                {{ semestre }}{{ grupo }}
+              </td>
+              <td class="acciones-col">
+                <button class="edit"><i class="fa-solid fa-user-pen"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="credencial-container">
+        <h1>Vista previa de la credencial</h1>
+        <div id="credencial" class="credencial">
+          <img src="path/to/logo.png" alt="Logo" class="logo">
+          <h2>Nombre</h2>
+          <p><strong>Matrícula:</strong> 1234</p>
+          <p><strong>Correo:</strong> 1234</p>
+          <p><strong>Teléfono:</strong> 1234</p>
+          <p><strong>Dirección:</strong> 1234</p>
+          <p><strong>Semestre:</strong> 1 <strong>Grupo:</strong> a</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

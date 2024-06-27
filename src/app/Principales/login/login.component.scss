@@ -1,0 +1,145 @@
+.Principal {
+  background: linear-gradient(to left, rgba(0,0,0,0.5), rgba(4, 5, 46, 0.7)), url("./fondo.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; 
+  width: 100%;
+
+  .card{
+    background-color: #f5f5f5;
+  }
+
+  .logotipo {
+    width: 200px;
+    margin: 10px;
+  }
+
+  .card-title,
+  h5 {
+    font-family: "Quicksand";
+    color: #140152;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .card-custom {
+    width: 100%;
+    margin: 30px;
+  }
+
+}
+
+.nav-link {
+  margin-top: 20px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #22007C;
+  border: 1px solid #b1adad;
+
+  &:hover {
+    color: #0D00A4;
+  }
+
+  &.active {
+    background-color: #140152;;
+    color: white;
+  }
+}
+
+.formulario {
+  margin: auto;
+  width: 80%;
+
+  .form-group {
+    label {
+      color: #04052E;
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    i {
+      padding: 4px;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 5px;
+      outline: none;
+      padding: 8px 16px;
+      background-color: #f5f5f5;
+      border: 1px solid #003554;
+    }
+
+    .pass {
+      position: relative;
+    }
+
+    .input-icon {
+      color: gray;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .input-icon.password {
+      left: unset;
+      right: 12px;
+    }
+  }
+
+}
+
+
+.boton {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login {
+    padding: 8px 15%;
+    background-color: #140152;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+  }
+
+  .login:hover {
+    cursor: pointer;
+    background-color: #22007C;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .Principal {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+
+    .card-custom {
+      width: 100%;
+      margin: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 930px) and (min-width: 768px) {
+  .Principal {
+    .card-custom {
+      width: 200%;
+      margin: 30px auto;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<div class="dialogo">
+  <h1 mat-dialog-title>Agregar Evento</h1>
+  <div class="contenedor">
+    <form (ngSubmit)="addEvent()">
+      <div class="form-group">
+        <mat-label>Título</mat-label>
+        <input matInput [(ngModel)]="event.title" name="title" required />
+      </div>
+      <div class="form-group">
+        <mat-label>Fecha</mat-label>
+        <input matInput [(ngModel)]="event.date" name="date" type="date" required />
+      </div>
+      <div class="form-group">
+        <mat-label>Hora</mat-label>
+        <input matInput [(ngModel)]="event.time" name="time" type="time" required />
+      </div>
+      <div mat-dialog-actions>
+        <button mat-raised-button class="Guardar" type="submit">Agregar</button>
+        <button mat-button type="button" class="Cancelar" (click)="close()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

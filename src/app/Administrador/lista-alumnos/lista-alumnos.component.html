@@ -1,0 +1,82 @@
+<div class="flex h-screen">
+    <div class="flex-1 p-4">
+        <div class="flex justify-between items-center Encabezado">
+            <h2 class="text-xl font-bold">Lista de Alumnos</h2>
+            <div>
+                <button class="px-4 py-2 Add" (click)="abrirModal()">
+                    Agregar<i class="fa-solid fa-plus"></i>
+                </button>
+                <input type="file" id="fileInput" (change)="onFileChange($event)" style="display: none;" />
+                <button class="px-4 py-2 Import" (click)="triggerFileInput()">
+                  Importar de Excel <i class="fa-solid fa-upload"></i>
+                </button>
+                <button class="px-4 py-2 Export" (click)="exportToExcel()">
+                    Exportar a Excel<i class="fa-solid fa-download"></i>
+                </button>
+            </div>
+        </div>
+        <div class="vista">
+            <div class="opciones" [formGroup]="searchForm">
+                <div class="grupos">
+                    <div>
+                        <label>Semestre</label>
+                        <select class="custom-select" id="semestre" formControlName="semestre">
+                            <option value="">Todos</option>
+                            <option *ngFor="let semestre of [1, 2, 3, 4, 5, 6]" [value]="semestre">{{ semestre }}
+                            </option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Grupo</label>
+                        <select class="custom-select" id="grupo" formControlName="grupo">
+                            <option value="">Todos</option>
+                            <option *ngFor="let grupo of ['A', 'B', 'C']" [value]="grupo">{{ grupo }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="buscador">
+                    <label for="search" class="mr-2">Buscar Alumno:</label>
+                    <input id="search" type="text" class="border rounded p-1" formControlName="search" />
+                </div>
+            </div>
+            <div class="overflow-x-auto espacio-tabla">
+                <table class=" min-w-full tabla">
+                    <thead class="head-table">
+                        <tr>
+                            <th>Matricula</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>CURP</th>
+                            <th>Semestre y Grupo</th>
+                            <th>Telefono</th>
+                            <th>Correo</th>
+                            <th>Direccion</th>
+                            <th>Fecha Nacimiento</th>
+                            <th class="acciones-col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of filteredItems">
+                            <td>{{ item.matricula }}</td>
+                            <td>{{ item.nombre }}</td>
+                            <td>{{ item.ap + " " + item.am }}</td>
+                            <td>{{ item.curp }}</td>
+                            <td>{{ item.semestre + " " + item.grupo }}</td>
+                            <td>{{ item.tel }}</td>
+                            <td>{{ item.correo }}</td>
+                            <td>{{ item.direccion}}</td>
+                            <td>{{ item.fecha}}</td>
+                            <td class="acciones-col">
+                                <button class="edit" (click)="editItem(item)"><i
+                                        class="fa-solid fa-user-pen"></i></button>
+                                <button class="borrar" (click)="deleteItem(item?.id)"><i
+                                        class="fa-regular fa-trash-can"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

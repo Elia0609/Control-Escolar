@@ -1,0 +1,43 @@
+<section class="Principal vh-100 d-flex align-items-center">
+    <div class="container-fluid h-custom">
+        <div class="row justify-content-start h-100">
+            <div class="col-md-4">
+                <div class="card card-custom">
+                    <div class="text-center">
+                        <img src="assets/logotipo.png" class="logotipo" alt="logo">
+                        <h2 class="card-title">Bienvenido</h2>
+                        <h5>Inicia sesión con tu cuenta</h5>
+                    </div>
+                    <div class="card-body">
+                        <nav class="nav nav-tabs justify-content-center">
+                            <li class="nav-item"><a class="nav-link" (click)="setupNavLinks()">Administrador</a></li>
+                            <li class="nav-item"><a class="nav-link" (click)="setupNavLinks()">Profesor</a></li>
+                            <li class="nav-item"><a class="nav-link active" (click)="setupNavLinks()">Alumno</a></li>
+                        </nav>
+                        <form class="formulario" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+                            <div class="form-group">
+                                <label for="usuario"><i class="fa-solid fa-user"></i>Usuario</label>
+                                <input type="text" placeholder="Ingresa tu matrícula" id="usuario" formControlName="usuario" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password"><i class="fa-solid fa-key"></i>Contraseña</label>
+                                <div class="pass">
+                                  <input  placeholder="Ingresa tu contraseña" type="password" id="contraseña" formControlName="contrasena" required>
+                                  <i class="fa-regular fa-eye input-icon password" id="ver" (click)="togglePasswordVisibility()"></i>
+                                </div>
+
+                            </div>
+                            <div class="boton">
+                                <button type="submit" class="login">Login</button>
+                              </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

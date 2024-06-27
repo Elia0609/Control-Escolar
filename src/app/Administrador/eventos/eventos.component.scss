@@ -1,0 +1,63 @@
+.Encabezado {
+  margin: 0;
+  background-color: #e2e8ee;
+  padding: 10px;
+  * {
+      margin-right: 10px;
+  }
+  button {
+      font-size: 15px;
+      color: #fff;
+      padding: 8px;
+      border: none;
+      border-radius: 10px;
+      background-color: #22007C;
+  }
+}
+
+.calendar-container {
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  width: 100%; 
+}
+
+.calendar-container full-calendar {
+  width: 80%; 
+  height: 100%;
+}
+
+
+::ng-deep .fc-event {
+  background-color: #22007C !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 5px !important;
+  border-radius: 5px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+::ng-deep .fc-event-time {
+  display: none !important;
+}
+
+::ng-deep .fc-event-title {
+  font-weight: 100 !important;
+}
+
+::ng-deep .fc-col-header-cell-cushion{
+  color: #22007C !important;
+  text-transform: uppercase !important;
+}
+
+::ng-deep .fc-toolbar-title{
+  color: #FFC600 !important;
+  text-transform: uppercase !important;
+}

@@ -1,0 +1,90 @@
+.Encabezado {
+    margin: 0;
+    background-color: #e2e8ee;
+    padding: 15px;
+}
+
+.principal {
+    display: flex;
+    border: 1px solid #d4d7da;
+    padding: 10px;
+    height: calc(100vh - 9rem);
+}
+
+.espacio-tabla {
+    width: 50%;
+
+    .tabla {
+        width: 100%;
+        border-collapse: collapse;
+
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .acciones-col {
+            width: 150px; // Ajusta este valor según sea necesario
+            text-align: center;
+
+            button {
+                font-size: 15px;
+                padding: 6px;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                margin: 0 5px;
+            }
+
+            .edit {
+                background-color: #ffd500;
+                margin: 2px;
+
+                &:hover {
+                    background-color: #fdc500;
+                }
+            }
+        }
+
+        tbody tr td.acciones-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                margin: 0 5px;
+            }
+        }
+    }
+}
+
+
+.credencial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    .credencial {
+        width: 116mm;
+        height: 84mm;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        width: 100px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}

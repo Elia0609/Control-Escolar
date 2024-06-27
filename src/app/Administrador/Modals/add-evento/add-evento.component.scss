@@ -1,0 +1,83 @@
+.dialogo {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  .mat-dialog-title {
+      color: #fff;
+      background: linear-gradient(to right, #04052E, #140152, #22007C);
+      padding: 10px;
+  }
+
+  .contenedor {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .form-group {
+          display: flex;
+          justify-content: space-around;
+          *{
+            margin: 5px
+          }
+          input {
+            width: 90%;
+            border-radius: 5px;
+            outline: none;
+            padding: 8px 16px;
+            background-color: #f5f5f5;
+            border: 1px solid #003554;
+        }
+      }
+
+      .mat-dialog-actions {
+          justify-content: flex-end;
+
+          * {
+              margin-right: 8px;
+          }
+
+          button {
+              font-size: 15px;
+              padding: 8px;
+              color: #fff;
+              border: none;
+              border-radius: 5px;
+          }
+
+          .Cancelar {
+              background-color: #d1105a;
+
+              &:hover {
+                  background-color: #ac0d4a;
+              }
+          }
+
+          .Guardar {
+              background-color: #2c9a33;
+
+              &:hover {
+                  background-color: #1f6924;
+              }
+          }
+      }
+
+  }
+}
+
+@media (max-width: 450px) {
+  .contenedor {
+      margin: 0;
+      padding: 0;
+      .form-group {
+          flex-direction: column;
+          width: 100%;
+          .par {
+              flex-direction: row !important;
+              width: 100%;
+              min-width: 280px;
+          }
+      }
+  }
+}
